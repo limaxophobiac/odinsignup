@@ -26,32 +26,32 @@
             <form id="signupform">
                 <div>
                     <label for="firstName">First Name</label>
-                    <input id="firstName" type="text" placeholder="Thor">
+                    <input id="firstName" type="text" placeholder="Thor" required title="*Personal Name">
                 </div>
                 
                 <div>
                     <label for="lastName">Last Name</label>
-                    <input id="lastName" type="text" placeholder="Odinson">
+                    <input id="lastName" type="text" placeholder="Odinson" required title="*Family Name">
                 </div>
                 
                 <div>
                     <label for="eMail">Email</label>
-                    <input id="eMail" type="email" placeholder="thor@asgard.com">
+                    <input id="eMail" type="email" placeholder="thor@asgard.com" required title="*Email Address">
                 </div>
                 
                 <div>
                     <label for="phoneNumber">Phone Number</label>
-                    <input id="phoneNumber" type="tel" placeholder="123456789">
+                    <input id="phoneNumber" type="tel" placeholder="123456789" pattern="[0-9]*" minlength="6" title="Optional. Numbers only. Min 6 characters.">
                 </div>
                 
                 <div>
                     <label for="passWord">Password</label>
-                    <input id="passWord" type="password">
+                    <input id="passWord" type="password" required minlength="6" title="*Min 6 characters" onChange="passChange()">
                 </div>
                 
                 <div>
                     <label for="passWordConfirm">Confirm Password</label>
-                    <input id="passWordConfirm" type="password">
+                    <input id="passWordConfirm" type="password" required minlength="6" title="*Min 6 characters" onChange="passChange()">
                 </div>
                 
             </form>
@@ -65,5 +65,16 @@
     <div class="imagewindow" id="secondwindow">
         <div><img src="odin-lined.png" alt="odin"><p>Odin</p></div>
     </div>
+
+    <script>
+        function passChange(){
+            var password = document.getElementById("passWord"), confirmpassword = document.getElementById("passWordConfirm");
+            if(password.value != confirmpassword.value){
+                confirmpassword.setCustomValidity("Passwords Don't Match!");
+            } else {
+                confirmpassword.setCustomValidity("");
+            }
+        }
+    </script>
 </body>
 </html>

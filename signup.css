@@ -1,7 +1,12 @@
 :root{
-    --colortext: rgba(100,100,150,1);
+    --colortext: rgba(120,120,180,1);
     --colorshadow: rgba(75,75,125,0.15);
-    --brightcolortext: rgba(150,150,225,1);
+    --brightcolortext: rgba(160,160,240,1);
+}
+
+@font-face {
+    font-family: 'Odin';
+    src: url('Norse-Bold.otf') format('opentype');
 }
 
 * {
@@ -9,10 +14,6 @@
     padding: 0px;
     color: lightgrey;
     font-family: Helvetica, Arial, sans-serif;
-}
-
-*:focus{
-    outline: none;
 }
 
 body {
@@ -47,6 +48,7 @@ form{
 
 .imagewindow div p {
     color: white;
+    font-family: "Odin", Helvetica;
 }
 
 .imagewindow div img{
@@ -100,6 +102,17 @@ form{
 #submitdiv p {
     color: var(--colortext);
     margin-bottom: 5vh;
+    font-weight: bold;
+}
+
+#submitdiv a {
+    margin-left: 5rem;
+    color: var(--brightcolortext);
+    text-decoration: none;
+    font-weight: bold;
+}
+#submitdiv a:hover{
+    color: lightgrey;
 }
 form input {
     min-width: 100%;
@@ -142,6 +155,7 @@ input[type="submit"] {
 	outline: inherit;
     margin-top: 7vh;
     margin-bottom: 2vh;
+    font-weight: bold;
 }
 
 input[type="submit"]:hover{
@@ -149,20 +163,14 @@ input[type="submit"]:hover{
     color: #000000;
 }
 
-#submitdiv a {
-    margin-left: 5rem;
-    color: var(--brightcolortext);
-    text-decoration: none;
-}
-
-@media (max-width: 830px){
+@media (max-width: 850px){
     body {
         display: flex;
         flex-direction: column;
     }
     .imagewindow {
-        /*Should be 100 vw but I get a scroll bar if this is over 97, can't find any margin/padding that would cause this*/
-        width: 97vw;
+        /*Should be 100 vw but I get a scroll bar if this is over 96, think this has something to do with scrollbar being counted in width*/
+        width: 96vw;
         height: 30vh;
     }
 
