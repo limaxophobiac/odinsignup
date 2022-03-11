@@ -1,6 +1,13 @@
+:root{
+    --colortext: rgba(100,100,150,1);
+    --colorshadow: rgba(75,75,125,0.15);
+}
+
 * {
     margin: 0px;
     padding: 0px;
+    color: lightgrey;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -26,7 +33,6 @@ form{
     width: 100%;
     height: 20vh;
     background-color: rgba(0,0,0,0.6);
-    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,6 +40,9 @@ form{
     gap: 1vw;
 }
 
+.imagewindow div p {
+    color: white;
+}
 
 .imagewindow div img{
     max-height: 70%;
@@ -50,10 +59,15 @@ form{
 #signupform div label, #signupform div input{
     display: block;
 }
+#signupform div input{
+    color: black;
+}
 
 #formdiv{
-    background-color: #ffffff;
-    box-shadow: 0px 8px 5px #eeeeee, 0px -4px 5px #eeeeee;
+    background-color: #111111;
+    box-shadow: 0px 15px 30px var(--colorshadow), 0px -10px 20px 0px var(--colorshadow);
+    /*shadow still bleeds on left with 0px clip path*/
+    clip-path: inset(-25px -2px -40px 0px);
     position: relative;
 }
 
@@ -74,8 +88,12 @@ form{
 
 
 #submitdiv{
-    background-color: #f7f7f7;
+    background-color: #000000;
     flex-grow: 1;
+}
+
+#submitdiv p {
+    color: var(--colortext);
 }
 form input {
     min-width: 100%;
@@ -86,7 +104,7 @@ form input {
     font-size: 1.5rem;
     font-weight: bold;
     display: flex;
-    background-color: #f7f7f7;
+    background-color: #000000;
 }
 
 
@@ -94,18 +112,26 @@ form input {
     margin: max(7vh, 2.5rem) 10% max(5vh, 2rem) 10%;
 }
 
+#herotext p {
+    color: var(--colortext);
+}
+
+#herotext p i {
+    color: var(--colortext);
+}
+
 input[type=submit]{
     margin: 4vh 0% 0 10%;
     
 }
 
-@media (max-width: 850px){
+@media (max-width: 830px){
     body {
         display: flex;
         flex-direction: column;
     }
     .imagewindow {
-        /*Should be 100 vw but I get a scroll bar if this is over 97, can't find any margin that would cause this*/
+        /*Should be 100 vw but I get a scroll bar if this is over 97, can't find any margin/padding that would cause this*/
         width: 97vw;
         height: 30vh;
     }
@@ -117,14 +143,23 @@ input[type=submit]{
 
     }
 
-}
-
-@media (max-width: 520px){
     #signupform div{
-        width: max(70%, 150px);
-        margin-left: 10%;
-        margin-right: 10%;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
+            width: max(70%, 150px);
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+     }
+     form{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+     }
+
+     #secondwindow{
+         display:none;
+     }
+
 }
