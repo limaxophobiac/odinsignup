@@ -1,6 +1,7 @@
 :root{
     --colortext: rgba(100,100,150,1);
     --colorshadow: rgba(75,75,125,0.15);
+    --brightcolortext: rgba(150,150,225,1);
 }
 
 * {
@@ -8,6 +9,10 @@
     padding: 0px;
     color: lightgrey;
     font-family: Helvetica, Arial, sans-serif;
+}
+
+*:focus{
+    outline: none;
 }
 
 body {
@@ -94,13 +99,14 @@ form{
 
 #submitdiv p {
     color: var(--colortext);
+    margin-bottom: 5vh;
 }
 form input {
     min-width: 100%;
 }
 
 #herodiv{
-    min-height: 25%;
+    min-height: 35%;
     font-size: 1.5rem;
     font-weight: bold;
     display: flex;
@@ -109,7 +115,7 @@ form input {
 
 
 #herotext{
-    margin: max(7vh, 2.5rem) 10% max(5vh, 2rem) 10%;
+    margin: 17.5vh 10% 5vh 10%;
 }
 
 #herotext p {
@@ -123,6 +129,30 @@ form input {
 input[type=submit]{
     margin: 4vh 0% 0 10%;
     
+}
+
+input[type="submit"] {
+	background: none;
+	color: var(--brightcolortext);
+	border: 2px solid var(--brightcolortext);
+    border-radius: 5px;
+	padding: 15px 25px;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    margin-top: 7vh;
+    margin-bottom: 2vh;
+}
+
+input[type="submit"]:hover{
+    background-color: var(--brightcolortext);
+    color: #000000;
+}
+
+#submitdiv a {
+    margin-left: 5rem;
+    color: var(--brightcolortext);
+    text-decoration: none;
 }
 
 @media (max-width: 830px){
@@ -161,5 +191,9 @@ input[type=submit]{
      #secondwindow{
          display:none;
      }
+
+     #herotext{
+        margin: 5vh 10% 5vh 10%;
+    }
 
 }
