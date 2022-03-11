@@ -1,6 +1,6 @@
 :root{
     --colortext: rgba(120,120,180,1);
-    --colorshadow: rgba(75,75,125,0.15);
+    --colorshadow: rgba(75,75,125,0.10);
     --brightcolortext: rgba(160,160,240,1);
 }
 
@@ -72,7 +72,7 @@ form{
 
 #formdiv{
     background-color: #111111;
-    box-shadow: 0px 15px 30px var(--colorshadow), 0px -10px 20px 0px var(--colorshadow);
+    box-shadow: 0px 15px 30px var(--colorshadow), 0px -5px 15px 0px var(--colorshadow);
     /*shadow still bleeds on left with 0px clip path*/
     clip-path: inset(-25px -2px -40px 0px);
     position: relative;
@@ -81,6 +81,10 @@ form{
 #formdiv p{
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+#formdiv input[type="password"]:invalid{
+    outline-color: red;
 }
 
 #contentcontainer{
@@ -163,14 +167,22 @@ input[type="submit"]:hover{
     color: #000000;
 }
 
+#photoSource{
+    color: white;
+    font-size: 0.8rem;
+    --leftMargin: calc(50% - 3rem); 
+    position: absolute;
+    bottom: 1vh;
+    left: var(--leftMargin);
+}
+
 @media (max-width: 850px){
     body {
         display: flex;
         flex-direction: column;
     }
     .imagewindow {
-        /*Should be 100 vw but I get a scroll bar if this is over 96, think this has something to do with scrollbar being counted in width*/
-        width: 96vw;
+        width: auto;
         height: 30vh;
     }
 
